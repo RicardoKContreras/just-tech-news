@@ -2,10 +2,12 @@ const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers/');
 const sequelize = require('./config/conection.js');
+const helpers = require('./utils/helpers');
 const path = require('path');
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const hbs = exphbs.create({helpers});
 const app = express();
+
 //session is used for cookies to save data and connects to the Sequelize database.
 
 const PORT = process.env.PORT || 3001;
